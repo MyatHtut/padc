@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">PADC_HelloWorld</string>
+    <string name="action_settings">Settings</string>
+    <string name="lbl_name">user_name</string>
+    <string name="lbl_pwd">pwd</string>
+    <string name="login">Login</string>
+    <string name="email">email</string>
+    <string name="phone">Phone</string>
+    <string name="register">Register</string>
+    <string name="title_activity_regsumery">regsumeryActivity</string>
+    <string name="male">male</string>
+    <string name="female">female</string>
+
+
+</resources>
