@@ -28,6 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:hint="@string/lbl_pwd"
+            android:inputType="textPassword"
             android:textColor="#0288D1"
             />
     </android.support.design.widget.TextInputLayout>
@@ -41,6 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:hint="@string/email"
+            android:inputType="textEmailAddress"
             android:textColor="#0288D1"
             />
     </android.support.design.widget.TextInputLayout>
@@ -55,6 +57,7 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:hint="@string/phone"
+            android:inputType="number"
             android:textColor="#0288D1"
             />
     </android.support.design.widget.TextInputLayout>
