@@ -9,8 +9,9 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.Toast;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements ViewFragment.controllerView {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,17 +32,26 @@ public class HomeActivity extends AppCompatActivity {
         });
 
 //        LoginFragment fragment=new LoginFragment();
-        RegisterFragment fragment=new RegisterFragment();
+
+        if(findViewById(R.id.fl_container2)!=null) {
+            RegisterFragment fragment = new RegisterFragment();
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fl_container2, fragment)
+                    .commit();
+        }
+        LoginFragment fragment2=new LoginFragment();
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.fl_container,fragment)
+                .replace(R.id.fl_container,fragment2)
                 .commit();
 
         Button btnlogin=(Button) findViewById(R.id.btn_login);
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                LoginFragment fragment=new LoginFragment();
+                LoginFragment fragment=LoginFragment.newInstance("dummy_username");
+
                 getSupportFragmentManager()
                         .beginTransaction()
                         .replace(R.id.fl_container,fragment)
@@ -119,5 +129,15 @@ public class HomeActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void OnLoginperform() {
+        Toast.makeText(HomeActivity.this,"Login",Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void OnRegisterperform() {
+
     }
 }
